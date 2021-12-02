@@ -15,7 +15,7 @@ loadMoreBtn.addEventListener('click', onloadMoreBtnClick);
 let searchData = null;
 let page = 1;
 let totalImages = 0;
-const pageSize = 140;
+const pageSize = 40;
 let totalPages = 0;
 
 function onFormSubmit(e) {

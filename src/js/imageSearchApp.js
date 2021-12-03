@@ -7,8 +7,6 @@ import { imagesListMarkup } from './renderMarkup';
 
 const { searchForm, gallery, loadMoreBtn } = refs;
 
-loadMoreBtn.classList.add('is-hidden');
-
 searchForm.addEventListener('submit', onFormSubmit);
 loadMoreBtn.addEventListener('click', onloadMoreBtnClick);
 

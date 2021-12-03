@@ -1,4 +1,3 @@
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import axios from 'axios';
 import { BASE_URL, API_KEY } from './constants';
 

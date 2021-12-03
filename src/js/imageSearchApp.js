@@ -29,6 +29,12 @@ function onFormSubmit(e) {
   }
   fetchImages(searchData, page, pageSize)
     .then(data => {
+      if (data.hits.length === 0) {
+        Notify.failure('Sorry, there are no images matching your search query. Please try again.');
+        loadMoreBtn.classList.add('is-hidden');
+        resetMarkup();
+        return;
+      }
       resetMarkup();
       renderMarkup(data);
       totalImages = data.totalHits;
@@ -57,10 +63,6 @@ function resetMarkup() {
 }
 
 function renderMarkup(images) {
-  if (images.hits.length === 0) {
-    Notify.failure('Sorry, there are no images matching your search query. Please try again.');
-    return;
-  }
   imagesListMarkup(images.hits);
   Notify.success(`Hooray! We found ${images.totalHits} images.`);
   new SimpleLightbox('.gallery a', { spinner: true }).refresh();
